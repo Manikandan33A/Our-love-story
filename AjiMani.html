@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story ❤️</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #d63031;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #2d3436;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .memory {
+            margin-top: 15px;
+        }
+
+        .memory h3 {
+            color: #0984e3;
+            margin-bottom: 5px;
+        }
+
+        .memory p, .memory b {
+            font-size: 14px;
+            color: #636e72;
+            display: block;
+        }
+
+        .page-indicator {
+            font-size: 12px;
+            color: #b2bec3;
+            margin-top: 5px;
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #ffeaa7; 
+            color: #6c5ce7;             
+            border: 2px solid #fdcb6e;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #fdcb6e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <h1 id="main-title">❤️ Our Love Story ❤️</h1>
+
+    <h2 id="sub-title">Manikandan ❤️ Varshini</h2>
+
+    <div class="slideshow">
+        <img id="memory-img" src="image/Aji1.jpg" alt="Our Memory">
+    </div>
+
+    <div class="memory">
+        <h3 id="date">Welcome!</h3>
+        <b id="text">Love you dii azhagiii💞 </b>
+        <div class="page-indicator" id="page-num">Welcome Page</div>
+    </div>
+
+    <!-- Click pannum pothu adutha page-kku move aagum -->
+    <button id="action-btn" onclick="nextPage()">Start Journey ❤️</button>
+
+</div>
+
+<script>
+    // Welcome page + 15 Lovable Moments list
+    const pages = [
+        {
+            title: "❤️ Our Love Story ❤️",
+            image: "image/Aji1.jpg",
+            date: "Welcome!",
+            text: "Love you dii azhagiii💞 ",
+            btnText: "Start Journey ❤️",
+            indicator: "Welcome Page"
+        },
+        {
+            title: "Lovable Moment 1",
+            image: "image/Aji2.jpg",
+            date: "1 May 2025",
+            text: "Our first love chat. This day will always stay in my heart. ❤️",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 1 of 15"
+        },
+        {
+            title: "Lovable Moment 2",
+            image: "image/Aji3.jpg",
+            date: "08 May 2025",
+            text: "Our Love journy started here.. ✨",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 2 of 15"
+        },
+        {
+            title: "Lovable Moment 3",
+            image: "image/Aji4.jpg",
+            date: "27 May 2025",
+            text: "Our first vedio call🌙",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 3 of 15"
+        },
+        {
+            title: "Lovable Moment 4",
+            image: "image/Aji5.jpg",
+            date: "31 May 2025",
+            text: "I called her as dii😇 Thookam varuthu dii 💖🥰",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 4 of 15"
+        },
+        {
+            title: "Lovable Moment 5",
+            image: "image/Aji6.jpg",
+            date: "6 June 2025",
+            text: "She call mee daa..Vedio call pannu daa 💖🥰",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 5 of 15"
+        },
+        {
+            title: "Lovable Moment 6",
+            image: "image/Aji7.jpg",
+            date: "16 June 2025",
+            text: "our first audio call ( booring ) AI conversation✨ ",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 6 of 15"
+        },
+        {
+            title: "Lovable Moment 7",
+            image: "image/Aji8.jpg",
+            date: "31 July 2025",
+            text: "small walk with her drop to bus ✨",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 7 of 15"
+        },
+        {
+            title: "Lovable Moment 8",
+            image: "image/Aji9.jpg",
+            date: "14 August 2025",
+            text: "Iruvarumm kairuu katti kondaa nall 💖😊",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 8 of 15"
+        },
+        {
+            title: "Lovable Moment 9",
+            image: "image/Aji10.jpg",
+            date: "2 september 2025",
+            text: "Iruvarumm  Muthal Muraii photo eduthaaa nalll✨My dream with my shot partner 💖 😊",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 9 of 15"
+        },
+        {
+            title: "Lovable Moment 10",
+            image: "image/Aji11.jpg",
+            date: "18 september2025",
+            text: " Firat time sitting with her ✨💖🫣 ",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 10 of 15"
+        },
+        {
+            title: "Lovable Moment 11",
+            image: "image/Aji12.jpg",
+            date: "21 November 2025",
+            text: "Marriage dream..waked up got good thoughts ✨🥹💕 ",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 11 of 15"
+        },
+        {
+            title: "Lovable Moment 12",
+            image: "image/Aji13.jpg",
+            date: "24 November2025",
+            text: "Department dream has succsess 💖💕😘",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 12 of 15"
+        },
+        {
+            title: "Lovable Moment 13",
+            image: "image/Aji14.jpg",
+            date: "8 December 2025",
+            text: "She give me unexpexted birthday gift 🌹🥰",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 13 of 15"
+        },
+        {
+            title: "Lovable Moment 14",
+            image: "image/Aji15.jpg",
+            date: "7 April 2026",
+            text: "Enakkuu onnuu venumm..Anaaa selavuu venaaa..Vaangi thariyaaa Earing eduthutu vaa( first time emotionally she wants)✨♥️💝",
+            btnText: "Next Moment ❤️",
+            indicator: "Moment 14 of 15"
+        },
+        {
+            title: "Lovable Moment 15",
+            image: "image/Aji16.jpg",
+            date: "Forever & Always",
+            text: "Successfully Completed one year aniversary 💍✨",
+            btnText: "Restart Story 🔄",
+            indicator: "Moment 15 of 15"
+        }
+    ];
+
+    let currentIndex = 0;
+
+    function nextPage() {
+        currentIndex++;
+        
+        // 15 moments mudincha piragu marubadiyum welcome page-kku pogum
+        if (currentIndex >= pages.length) {
+            currentIndex = 0; 
+        }
+
+        // Screen content-ai completely update panrathu
+        document.getElementById("main-title").innerText = pages[currentIndex].title;
+        document.getElementById("memory-img").src = pages[currentIndex].image;
+        document.getElementById("date").innerText = pages[currentIndex].date;
+        document.getElementById("text").innerText = pages[currentIndex].text;
+        document.getElementById("action-btn").innerText = pages[currentIndex].btnText;
+        document.getElementById("page-num").innerText = pages[currentIndex].indicator;
+    }
+</script>
+
+</body>
+</html>
